@@ -1,0 +1,11 @@
+typescriptコマンド例
+
+・npx tsc -v、npm list
+typescriptのバージョン確認
+
+・npx tsc ./tutorial.ts
+typescriptをjsにコンパイル
+
+・npx tsc --init
+tsconfig.jsonを作成
+これを元にtscコンパイラがコンパイルする
