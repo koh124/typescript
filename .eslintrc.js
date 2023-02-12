@@ -8,8 +8,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     // 'plugin:react/jsx-runtime',
-    'standard-with-typescript'
-    // 'prettier'
+    'standard-with-typescript',
+    'prettier'
   ],
   overrides: [
   ],

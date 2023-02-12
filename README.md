@@ -17,12 +17,58 @@ typescriptはコーディング中はあたかもそのオブジェクト、関�
 
 もうすぐ2023年になる現在だと、es2022にしておけば無難？
 
+★Linter, Formatterとは
+Linterはコードの静的解析ツール
+コーディング規約に則っているかチェックしてくれる
+ルール違反があるとエラー、警告を表示してくれる
+潜在的なバグの発見に役立つ
+
+eg:
+・ESLint: Javascript/Typescript
+・Stylelint: CSS
+
+Fomatterはコードの整形ツール
+スペース、インデント、改行等を一定のコーディング規約に従うようにBeautifyしてくれる
+eg: Prettier
+
 ★ESLintを導入する
 ・パッケージのインストール
 npm install --save-dev @typescript-eslint/eslint-plugin eslint\ eslint-config-standard-with-typescript eslint-plugin-import eslint-plugin-n\ eslint-plugin-promise eslint-plugin-react eslint-plugin-strict-dependencies\
 eslint-plugin-unused-imports eslint-config-prettier prettier\
 
 ・eslintrc.jsの追加
+npx eslint --initで対話的にESLint構成を作成
+
+・ESLintの実行
+npx eslint index.ts
+
+★Prettierを使う
+npx prettier --write index.ts
+
+----------メモ----------
+
+・npx eslint index.tsでESLintを実行できるが、こんな感じのエラーが出る
+
+Error: Error while loading rule '@typescript-eslint/dot-notation': You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser.
+
+★解決
+
+eslintrc.jsに記述
+```
+parserOptions: {
+  project: ['./tsconfig.json']
+}
+
+//tsconfig.eslint.jsonに追記する場合
+parserOptions: {
+  project: ['./tsconfig.eslint.json']
+}
+
+tsconfig.eslint.json
+{
+  "extends": "./tsconfig.json", //tsconfig.eslint.jsonでtsconfig.jsonを読み込む
+}
+```
 
 ----------docs----------
 
