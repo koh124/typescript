@@ -15,12 +15,6 @@ const multiTypes = <S extends string, N extends number, B extends boolean>(str: 
 };
 multiTypes<string, number, boolean>('hello', 1, true);
 
-// ★ジェネリクスのメリット
-// 一般的に、コードの共通化とコードの安全性の確保の両立は難しい
-// 型を厳密に指定すれば、コードの安全性は確保できるが、同じようなコードが量産される
-// 型を指定しなければ（any）コードの再利用性は高まるが、安全性が失われる
-// ジェネリクスはこの問題を解決する
-
 // ★extends
 // extendsキーワードでジェネリクスに型制約を与えることもできる
 // extendsで型制約を与えると、型引数Tは指定した型またはそのサブタイプであることが保証される

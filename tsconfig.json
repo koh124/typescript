@@ -1,6 +1,6 @@
 {
   // tscコンパイラが探索するパスを指定
-  "include": ["src/**/*", "types/**/*"],
+  "include": ["src/**/*", "tsc/**/*", "types/**/*"],
   "compilerOptions": {
     "sourceMap": true,
     "resolveJsonModule": true,

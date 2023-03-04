@@ -16,7 +16,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.eslint.json'],
     ecmaFeatures: {
       jsx: true
     }
@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     'react',
     'strict-dependencies',
-    'unused-imports'
+    'unused-imports',
   ],
   rules: {
   }

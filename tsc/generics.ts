@@ -1,25 +1,4 @@
-// ジェネリクス（generics）は型の引数
-// 一般に型の安全性とコードの共通化の両立は難しい
-// どちらかを取ればどちらかは損なわれることが多い
-
-// 型を指定しなければ再利用性が高まるが、コードの安全性が損なわれる
-function chooseRandomlyAny(v1: any, v2: any): any {
-  return Math.random() <= 0.5 ? v1 : v2;
-}
-let str = chooseRandomlyAny(0, 1);
-// str = str.toLowerCase(); // コンパイルエラーは発生しないのに、実行するとエラー
-
-// 型を指定することでコードの安全性は保たれるが、同じようなコードが量産される
-function chooseRandomlyNumber(v1: number, v2: number): number {
-  return Math.random() <= 0.5 ? v1 : v2;
-}
-function chooseRandomlyString(v1: string, v2: string): string {
-  return Math.random() <= 0.5 ? v1 : v2;
-}
-
-// 【ジェネリクスで解決】
-// 五分五分で抽選を引き当てるコード
-function chooseRandomly<T>(v1: T, v2: T): T {
+const chooseRandomly = <T>(v1: T, v2: T): T => {
   return Math.random() <= 0.5 ? v1 : v2;
 }
 
