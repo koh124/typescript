@@ -13,6 +13,17 @@ const func: Func = (arg: string): void => {
 }
 func("this argument is required with string")
 
+// 関数を引数に取る関数の型注釈
+type MyFunc = (func: Func) => string; // 関数の型定義
+const myFunc: MyFunc = (func: Func) => "string" // 関数の型エイリアスを元に関数を定義
+myFunc(func);
+
+// これと同じ
+const myFunc1: (func: (arg: string) => void) => string = (func) => {
+  return 'string';
+}
+myFunc1(func);
+
 // 配列の型注釈
 const arr: string[] = ["a", "b", "c"];
 const arr2: Array<string> = ["x", "y", "z"];
